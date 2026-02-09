@@ -14,14 +14,6 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 # 自动拷贝etc，每次 build 都检测更新
 # --------------------------
 add_custom_command(
-        OUTPUT ${CMAKE_BINARY_DIR}/doc
-        COMMAND ${CMAKE_COMMAND} -E copy_directory
-        ${CMAKE_SOURCE_DIR}/doc ${CMAKE_BINARY_DIR}/doc
-        DEPENDS ${CMAKE_SOURCE_DIR}/doc
-        COMMENT "Copying doc/ to build directory"
-)
-
-add_custom_command(
         OUTPUT ${CMAKE_BINARY_DIR}/etc
         COMMAND ${CMAKE_COMMAND} -E copy_directory
         ${CMAKE_SOURCE_DIR}/etc ${CMAKE_BINARY_DIR}/etc
@@ -30,7 +22,7 @@ add_custom_command(
 )
 
 add_custom_target(copy_resources ALL
-        DEPENDS ${CMAKE_BINARY_DIR}/doc ${CMAKE_BINARY_DIR}/etc
+        DEPENDS ${CMAKE_BINARY_DIR}/etc
 )
 
 # --------------------------
