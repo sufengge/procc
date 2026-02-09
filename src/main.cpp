@@ -28,10 +28,10 @@ int main()
 	//variable_type();
 
 	//变量作用域
-    //variable_scope();
+    variable_scope();
 	
 	//常量
-	constant();
+	//constant();
 
 	return 0;
 }
