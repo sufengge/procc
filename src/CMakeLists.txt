@@ -1,18 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
-
-project(procc LANGUAGES CXX)
-
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-# 头文件目录
-include_directories(${CMAKE_SOURCE_DIR}/../include)
-
-# 可执行文件输出到 bin
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/../bin)
-
-add_executable(procc
-        main.cpp
+add_library(procc_lib
         Basic_Grammar.cpp
         constant.cpp
         data_type.cpp
@@ -20,3 +6,9 @@ add_executable(procc
         variable_scope.cpp
         variable_type.cpp
 )
+
+target_include_directories(procc_lib PUBLIC ${CMAKE_SOURCE_DIR}/include)
+add_executable(procc main.cpp)
+target_link_libraries(procc PRIVATE procc_lib)
+target_compile_options(procc PRIVATE -Wall -O2)
+target_compile_options(procc_lib PRIVATE -Wall -O2)

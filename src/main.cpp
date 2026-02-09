@@ -7,7 +7,7 @@
  ************************************************************************/
 
 #include<iostream>
-#include "variable.h"
+#include "variable_type.h"
 #include "Test.h"
 
 using namespace std;

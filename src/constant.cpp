@@ -8,7 +8,7 @@
 #include<iostream>
 #include<unistd.h>
 #include<string.h>
-#include"variable.h"
+#include"variable_type.h"
 
 using namespace std;
 
